@@ -13,6 +13,7 @@ class Complex
     int operator==(Complex);   
     int operator>=(Complex);
     int operator<=(Complex);
+    float value();
 };
 istream &operator>>(istream &din, Complex &c)
 {
@@ -73,20 +74,29 @@ int Complex :: operator>=(Complex c)
     else
         return 0;
 }
+float Complex :: value()
+{
+    return(sqrt(r*r + i*i));
+}
 int main()
 {
     Complex c1,c2,c3,c4,c5,c6;
-    cout<<"Enter tow complex number : ";
+    cout<<"Enter two complex number : ";
     cin>>c1>>c2;
     c6=c1;
     if(c1==c2)
-        cout<<"They r same";
+        cout<<"They r same"<<endl;
     else
-        cout<<"They r't same";
+        cout<<"They r't same"<<endl;
     if(c1>=c2)
-        cout<<"c1 is large";
+        cout<<"c1 is large"<<endl;
     else 
-        cout<<"c2 is large";
-    cout<<c1<<endl<<c2<<endl;
-    cout<<c1+c2<<endl<<c1-c2<<endl<<c1*c2<<endl<<c6;
+        cout<<"c2 is large"<<endl;
+    cout<<"c1 : "<<c1<<endl;
+    cout<<"c2 : "<<c2<<endl;
+    cout<<"c1 + c2 : "<<c1+c2<<endl;
+    cout<<"c1 - c2 : "<<c1-c2<<endl;
+    cout<<"c1 * c2 : "<<c1*c2<<endl;
+    cout<<"Value of c1 is : "<<c1.value()<<endl;
+    cout<<"Value of c2 is : "<<c2.value();
 }
